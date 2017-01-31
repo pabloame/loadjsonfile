@@ -1,5 +1,8 @@
 # CDI LoadJsonFile - Interceptor
 
+[![Build Status](https://api.travis-ci.org/pabloame/loadjsonfile.svg?branch=master)](https://travis-ci.org/pabloame/loadjsonfile)
+
+
 A simple CDI interceptor for Java EE 7. It loads json content file into a Java class.
 
 
