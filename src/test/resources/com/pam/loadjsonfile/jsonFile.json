@@ -1,5 +1,13 @@
 {
   "name": "Name",
   "age": "29",
-  "active": false
+  "active": false,
+  "innerClass": {
+    "test": 2,
+    "list": [
+      2,
+      4
+    ]
+  },
+  "unknown": "ignore"
 }
