@@ -60,7 +60,7 @@ public class LoadJsonFileInterceptor {
         return inputStream;
     }
 
-    private void processJsonKey(InvocationContext context, JsonObject jsonObject, String key) throws NoSuchFieldException {
+    private void processJsonKey(InvocationContext context, JsonObject jsonObject, String key) {
         try {
             Field field = intercepted.getBeanClass().getDeclaredField(key);
             field.setAccessible(true);
@@ -76,10 +76,8 @@ public class LoadJsonFileInterceptor {
         LoadJsonFile annotation = intercepted.getBeanClass().getAnnotation(LoadJsonFile.class);
         String fileName = annotation.fileName();
         if (fileName == null || fileName.length() == 0) {
-            fileName = new StringBuilder()
-                    .append(intercepted.getBeanClass().getSimpleName())
-                    .append(FILE_TYPE)
-                    .toString();
+            fileName = intercepted.getBeanClass().getSimpleName() +
+                    FILE_TYPE;
         }
         return fileName;
     }
