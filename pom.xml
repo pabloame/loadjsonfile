@@ -11,13 +11,13 @@
 
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>9</java.version>
         <testng.version>6.9.10</testng.version>
-        <javaee-api.version>7.0</javaee-api.version>
-        <javax.json.version>1.0.4</javax.json.version>
-        <weld-se-core.version>2.4.1.Final</weld-se-core.version>
-        <jackson-databind.version>2.9.8</jackson-databind.version>
-        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+        <javaee-api.version>8.0</javaee-api.version>
+        <javax.json.version>1.1.4</javax.json.version>
+        <weld-se-core.version>3.1.0.Final</weld-se-core.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <yasson.version>1.0.3</yasson.version>
     </properties>
 
 
@@ -48,9 +48,10 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson-databind.version}</version>
+                <groupId>org.eclipse</groupId>
+                <artifactId>yasson</artifactId>
+                <version>${yasson.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -69,8 +70,8 @@
             <artifactId>weld-se-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>

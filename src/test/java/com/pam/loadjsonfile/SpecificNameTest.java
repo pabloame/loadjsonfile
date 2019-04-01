@@ -10,9 +10,6 @@ import javax.inject.Singleton;
 
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by Pablo on 08/01/2017.
- */
 public class SpecificNameTest {
     private static final String NAME = "Name";
     private static final Integer AGE = 29;
@@ -27,10 +24,11 @@ public class SpecificNameTest {
 
     @Test
     public void loadJsonWithSpecificFileName() {
-        MyDummyClassSpecificFileName myDummyClassSpecificFileName = weldContainer.instance().select(MyDummyClassSpecificFileName.class).get();
+        MyDummyClassSpecificFileName myDummyClassSpecificFileName = weldContainer.select(MyDummyClassSpecificFileName.class).get();
         assertEquals(myDummyClassSpecificFileName.getName(), NAME);
         assertEquals(myDummyClassSpecificFileName.getAge(), AGE);
         assertEquals(myDummyClassSpecificFileName.isActive(), ACTIVE);
+
     }
 
     @AfterTest
@@ -55,6 +53,18 @@ public class SpecificNameTest {
 
         public boolean isActive() {
             return active;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setAge(Integer age) {
+            this.age = age;
+        }
+
+        public void setActive(boolean active) {
+            this.active = active;
         }
     }
 
